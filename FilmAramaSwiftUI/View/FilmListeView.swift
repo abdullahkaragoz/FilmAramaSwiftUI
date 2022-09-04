@@ -20,22 +20,26 @@ struct FilmListeView: View {
                     .padding()
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                 
-            List(filmListeViewModel.filmler, id: \.imdbId) {
-                film in
-                HStack{
-                    OzelImage(url: film.poster)
-                        .frame(width: 90, height: 130)
-                    
-                    VStack(alignment: .leading){
-                        Text(film.title)
-                            .font(.title3)
-                            .foregroundColor(.blue)
+            List(filmListeViewModel.filmler, id: \.imdbId)
+                { film in
+                NavigationLink {
+                    DetayView(imdbId: film.imdbId)
+                } label: {
+                    HStack() {
+                        OzelImage(url: film.poster)
+                            .frame(width: 90, height: 130)
                         
-                        Text(film.year)
-                            .foregroundColor(.orange)
-                   }
+                        VStack(alignment: .leading){
+                            Text(film.title)
+                                .font(.title3)
+                                .foregroundColor(.blue)
+                            
+                            Text(film.year)
+                                .foregroundColor(.orange)
+                       }
+                    }
                 }
-                
+
             }
         
         }.navigationTitle(Text("Film Kitabı"))

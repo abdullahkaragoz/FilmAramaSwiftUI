@@ -25,8 +25,8 @@ struct FilmDetay : Codable {
         case awards = "Awards"
         case poster = "Poster"
         case metascore = "Metascore"
-        case imdbRating = "ImdbRating"
-        case imdbId = "ImdbID"
+        case imdbRating = "imdbRating"
+        case imdbId = "imdbID"
         
     }
 

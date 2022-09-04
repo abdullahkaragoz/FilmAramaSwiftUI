@@ -30,7 +30,7 @@ class DownloaderClient {
         }.resume()
     }
     
-    func FilmDetayiniIndir (imdbId : String, completion : @escaping(Result<FilmDetay,DownloaderError>) -> Void ){
+    func filmDetayiniIndir (imdbId : String, completion : @escaping(Result<FilmDetay,DownloaderError>) -> Void ){
       
         guard let url = URL(string: "https://www.omdbapi.com/?i=\(imdbId)&apikey=832e5738") else {
             return completion(.failure(.yanlisUrl))
